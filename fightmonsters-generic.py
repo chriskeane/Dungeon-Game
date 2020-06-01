@@ -16,7 +16,7 @@ def clear():
         _ = system('clear') 
 
 #Shopping Function
-def shopping(gold=0, arms=0, armors=0):
+def shopping(gold=0, arms=0, armor=0):
 	wanttoshop = "x"
 	while wanttoshop not in ["y","n"]:
 		wanttoshop = input("Do you want to buy better arms or armor? (y/n) ")
@@ -35,7 +35,7 @@ def shopping(gold=0, arms=0, armors=0):
 				print ("You buy better armor!")
 				armor = armor + 1
 				gold = gold - 50
-	return [gold, arms, armors]
+	return [gold, arms, armor]
 
 def statdescriptor(stat):
 	""" This is just a function to return 'friendly' names for stats"""
@@ -208,6 +208,9 @@ while (keepplaying):
 			constitution = 5
 			hitpoints = 100
 			maxhitpoints = 100
+			# Use the next line to debug arms / armor purchases
+			# totalgold = 50
+			
 		else:
 			print("Nice try sucka!  You get a normal character....")
 			sleep(2)
@@ -257,7 +260,7 @@ while (keepplaying):
 				hitpoints = maxhitpoints
 				print( name + " now has " + str(hitpoints) + " (of " + str(maxhitpoints) + ")")
 				sleep(3)
-		showstats()
+		# showstats()
 		print("\n\n" + name +  " has " + str(((level-1)*100) + xp) + " experience points!")
 		print("(need 100 for next level)")
 		sleep(3)
